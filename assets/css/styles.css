@@ -306,6 +306,8 @@ button {
     align-items: start;
     gap: 19px;
     padding: 21px;
+    border-radius: 10px;
+    transition: 700ms;
 }
 
 .service__img {
@@ -316,9 +318,17 @@ button {
     align-items: center;
     justify-content: center;
     background: #eff6fd;
+    color: var(--primary-color);
+    transition: 700ms;
 }
 
-.service__img--active {
+.service:hover {
+    position: relative;
+    box-shadow: 0px 14px 28px 0px rgba(0, 0, 0, 0.05);
+}
+
+.service:hover .service__img {
+    color: #fff;
     background: var(--secondary-color);
 }
 
@@ -382,9 +392,10 @@ button {
     display: grid;
     align-items: start;
     border-radius: 4px;
+    transition: 500ms;
 }
 
-.hiwork__step--normal::before {
+.hiwork__step::before {
     content: "";
     display: block;
     position: absolute;
@@ -394,14 +405,15 @@ button {
     right: 0;
     border-radius: 4px;
     border: 16px solid #eaf6ff;
+    transition: 500ms;
 }
 
-.hiwork__step--active {
+.hiwork__step:hover {
     margin-top: -16px;
     align-self: flex-start;
 }
 
-.hiwork__step--active::before {
+.hiwork__step:hover::before {
     content: "";
     display: block;
     position: absolute;
@@ -542,6 +554,14 @@ button {
 .staff__person {
     display: grid;
     justify-items: center;
+    border-radius: 8px;
+    border: 1px solid #fff;
+    transition: 200ms;
+}
+
+.staff__person:hover {
+    border: 1px solid #e8ebee;
+    box-shadow: 0px 14px 28px 0px rgba(0, 0, 0, 0.05);
 }
 
 .staff__person__image__bg {
@@ -568,6 +588,7 @@ button {
 }
 
 .staff__person__desc {
+    padding-bottom: 20px;
     color: #575f66;
     font-size: 1.4rem;
     font-weight: 300;
@@ -677,10 +698,17 @@ button {
 .blog__item {
     width: 270px;
     border-radius: 12px;
+    border: 1px solid #fff;
+    transition: 200ms;
 }
 
-.blog__item--active {
+.blog__item:hover {
     border: 1px solid #e8ebee;
+    box-shadow: 0px 14px 28px 0px rgba(0, 0, 0, 0.05);
+}
+
+.blog__item:hover .blog__item_cta {
+    color: var(--primary-color);
 }
 
 .blog__item__thumb {
@@ -712,10 +740,6 @@ button {
 .blog__item_cta {
     color: var(--secondary-color);
     font-size: 1.4rem;
-}
-
-.blog__item_cta--active {
-    color: var(--primary-color);
 }
 
 /* Contact */
@@ -843,10 +867,12 @@ button {
     height: 28px;
     border-radius: 50%;
     background: #fff;
+    color: var(--primary-color);
 }
 
-.footer__social-link-active {
+.footer__social-link:hover {
     background: var(--secondary-color);
+    color: #fff;
 }
 
 .footer__email {
