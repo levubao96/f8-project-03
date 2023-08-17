@@ -18,6 +18,14 @@ body {
     --secondary-color: #2e80ce;
 }
 
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
 /* Common */
 
 a {
@@ -386,43 +394,16 @@ button {
 }
 
 .hiwork__step {
-    position: relative;
     padding: 42px;
     width: 338px;
-    display: grid;
-    align-items: start;
-    border-radius: 4px;
-    transition: 500ms;
-}
-
-.hiwork__step::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
     border-radius: 4px;
     border: 16px solid #eaf6ff;
     transition: 500ms;
 }
 
 .hiwork__step:hover {
-    margin-top: -16px;
-    align-self: flex-start;
-}
-
-.hiwork__step:hover::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    border-radius: 4px;
-    border: 16px solid var(--secondary-color);
+    transform: translateY(-16px);
+    border-color: var(--secondary-color);
 }
 
 .hiwork__step__name {
@@ -564,6 +545,10 @@ button {
     box-shadow: 0px 14px 28px 0px rgba(0, 0, 0, 0.05);
 }
 
+.staff__person:hover .staff__person__image {
+    transform: scale(1.1);
+}
+
 .staff__person__image__bg {
     width: 270px;
     height: 318px;
@@ -579,6 +564,7 @@ button {
     height: 290px;
     object-fit: cover;
     border-radius: 6px;
+    transition: 300ms;
 }
 
 .staff__person__name {
@@ -805,7 +791,7 @@ button {
 }
 
 .footer__summary {
-    flex: 1.5;
+    flex: 2.5;
 }
 
 .footer__summary > .footer_desc {
@@ -846,7 +832,7 @@ button {
 }
 
 .footer__contact {
-    flex: 1.5;
+    flex: 2.5;
 }
 
 .footer__contact__label {
@@ -875,20 +861,30 @@ button {
     color: #fff;
 }
 
-.footer__email {
+.footer-form {
     margin-top: 10px;
     display: flex;
     align-items: center;
 }
 
-.footer__email__input {
+.footer-form__input {
+    width: 212px;
     height: 46px;
-    padding: 10px;
+    padding: 0 10px;
+    outline: none;
+    color: #fff;
+    background: transparent;
     border-radius: 4px;
     border: 1px solid #406181;
 }
 
-.footer__email__cta {
+.footer-form__input::placeholder {
+    font-size: 1.4rem;
+    line-height: 1.86;
+    color: #9ca8b1;
+}
+
+.footer-form__submit {
     margin-left: 12px;
     min-width: 108px;
     height: 46px;
